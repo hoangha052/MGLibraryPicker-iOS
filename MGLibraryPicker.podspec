@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "MGLibraryPicker"
-  spec.version      = "0.4.0"
+  spec.version      = "0.5.0"
   spec.summary      = "A Photo Library for iOS application"
 
   # This description is used to generate tags and improve search results.
@@ -104,7 +104,7 @@ spec.ios.deployment_target = "10.0"
   #
 
   # spec.resource  = "icon.png"
-    spec.resources = "MingleLibraryPickerView/LibraryPickerView/**/*.{xcassets, xib}"
+    spec.resources = "MingleLibraryPickerView/LibraryPickerView/**/*.{xcassets,xib}"
 
   # spec.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
