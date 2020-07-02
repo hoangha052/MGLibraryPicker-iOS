@@ -10,7 +10,7 @@ import UIKit
 import Photos
 
 extension PHAsset {
-    static func getImageFromAsset(asset: PHAsset, size: CGSize? = nil, callback: @escaping (_ result:UIImage) -> Void) {
+    public static func getImageFromAsset(asset: PHAsset, size: CGSize? = nil, callback: @escaping (_ result:UIImage) -> Void) {
         let requestOptions = PHImageRequestOptions()
         requestOptions.deliveryMode = PHImageRequestOptionsDeliveryMode.highQualityFormat
         requestOptions.isNetworkAccessAllowed = true
@@ -27,7 +27,7 @@ extension PHAsset {
 }
 
 extension URL {
-    static func thumbnailOfVideo(_ url: URL) -> UIImage? {
+    public static func thumbnailOfVideo(_ url: URL) -> UIImage? {
         let asset = AVURLAsset(url: url, options: nil)
         let generate = AVAssetImageGenerator(asset: asset)
         generate.appliesPreferredTrackTransform = true

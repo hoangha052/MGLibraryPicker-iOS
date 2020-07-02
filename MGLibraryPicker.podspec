@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "MGLibraryPicker"
-  spec.version      = "0.3.0"
+  spec.version      = "0.4.0"
   spec.summary      = "A Photo Library for iOS application"
 
   # This description is used to generate tags and improve search results.
@@ -89,7 +89,7 @@ spec.ios.deployment_target = "10.0"
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "MingleLibraryPickerView/LibraryPickerView/**/*.{swift, xib}"
+  spec.source_files  = "MingleLibraryPickerView/LibraryPickerView/**/*.{swift}"
   spec.exclude_files = "Classes/Exclude"
 
   # spec.public_header_files = "Classes/**/*.h"

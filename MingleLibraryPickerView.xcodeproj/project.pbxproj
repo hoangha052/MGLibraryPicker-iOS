@@ -22,7 +22,6 @@
 		1CAB24B124AC9ECB006A8778 /* MGAlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAB24A324AC9ECB006A8778 /* MGAlbumCell.swift */; };
 		1CAB24B224AC9ECB006A8778 /* MGAlbumsPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAB24A424AC9ECB006A8778 /* MGAlbumsPickerView.swift */; };
 		1CAB24B324AC9ECB006A8778 /* MGAlbumsPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CAB24A524AC9ECB006A8778 /* MGAlbumsPickerView.xib */; };
-		1CAB24B424AC9ECB006A8778 /* MGInputBarTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CAB24A624AC9ECB006A8778 /* MGInputBarTitleView.xib */; };
 		1CAB24B524AC9ECB006A8778 /* MLPCameraCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CAB24A824AC9ECB006A8778 /* MLPCameraCollectionViewCell.xib */; };
 		1CAB24B624AC9ECB006A8778 /* MLPImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAB24A924AC9ECB006A8778 /* MLPImageCell.swift */; };
 		1CAB24B724AC9ECB006A8778 /* MLPImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CAB24AA24AC9ECB006A8778 /* MLPImageCell.xib */; };
@@ -46,7 +45,6 @@
 		1CAB24A324AC9ECB006A8778 /* MGAlbumCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGAlbumCell.swift; sourceTree = "<group>"; };
 		1CAB24A424AC9ECB006A8778 /* MGAlbumsPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGAlbumsPickerView.swift; sourceTree = "<group>"; };
 		1CAB24A524AC9ECB006A8778 /* MGAlbumsPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MGAlbumsPickerView.xib; sourceTree = "<group>"; };
-		1CAB24A624AC9ECB006A8778 /* MGInputBarTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MGInputBarTitleView.xib; sourceTree = "<group>"; };
 		1CAB24A824AC9ECB006A8778 /* MLPCameraCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MLPCameraCollectionViewCell.xib; sourceTree = "<group>"; };
 		1CAB24A924AC9ECB006A8778 /* MLPImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLPImageCell.swift; sourceTree = "<group>"; };
 		1CAB24AA24AC9ECB006A8778 /* MLPImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MLPImageCell.xib; sourceTree = "<group>"; };
@@ -119,7 +117,6 @@
 			children = (
 				1CAB24A024AC9ECB006A8778 /* LibraryPickerViewExtention.swift */,
 				1CAB24A124AC9ECB006A8778 /* Album */,
-				1CAB24A624AC9ECB006A8778 /* MGInputBarTitleView.xib */,
 				1CAB24A724AC9ECB006A8778 /* CustomCell */,
 			);
 			path = "Photo List View";
@@ -211,7 +208,6 @@
 				1CAB24B524AC9ECB006A8778 /* MLPCameraCollectionViewCell.xib in Resources */,
 				1C00D20D24AD8F2D002B28BD /* Main.storyboard in Resources */,
 				1CAB24B324AC9ECB006A8778 /* MGAlbumsPickerView.xib in Resources */,
-				1CAB24B424AC9ECB006A8778 /* MGInputBarTitleView.xib in Resources */,
 				1CAB24AD24AC9ECB006A8778 /* Assets.xcassets in Resources */,
 				1CAB24B024AC9ECB006A8778 /* MGAlbumCell.xib in Resources */,
 				1C00D21424AD8F7D002B28BD /* ImageCell.xib in Resources */,
