@@ -31,7 +31,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func didClickButton(_ sender: Any) {
-        let pickerViewController = MGLibraryPickerViewController().initViewController()
+        let pickerViewController = MGLibraryPickerViewController.initViewController()
         pickerViewController.delegate = self
         pickerViewController.maximumSelectionsAllowed = 1
         pickerViewController.takePhotoEnable = true
