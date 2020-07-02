@@ -48,10 +48,6 @@ extension ViewController: MGLibraryPickerViewDelegate {
     func didCameraTakePhoto(image: UIImage) {
         imageView.image = image
     }
-    
-    var sendPhotoEnabled: Bool {
-        return true
-    }
 }
 
 // MARK: - UICollectionViewDataSource

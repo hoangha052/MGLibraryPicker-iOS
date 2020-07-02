@@ -114,19 +114,9 @@ public class MGLibraryPickerViewController: UIViewController {
     }
 
     private func setupData() {
-        PHPhotoLibrary.requestAuthorization { (status) in
-            switch status {
-            case .notDetermined, .restricted, .denied:
-                print("Not determined yet")
-            case .authorized:
-                self.albums = self.fetchAlbums()
-                self.fetchAndDisplayPhotos()
-                DispatchQueue.global(qos: .default).async {
-                    self.fetchAlbumsInfo()
-                }
-            @unknown default:
-                break
-            }
+        self.fetchAndDisplayPhotos()
+        DispatchQueue.global(qos: .default).async {
+            self.fetchAlbumsInfo()
         }
     }
 
@@ -145,15 +135,17 @@ public class MGLibraryPickerViewController: UIViewController {
 
     // MARK: - IBAction
     @IBAction func didClickCancelButton(_ sender: Any) {
-        self.delegate?.didClosePickerView?()
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true) {
+            self.delegate?.didClosePickerView?()
+        }
     }
     
     @IBAction func didClickUploadButton(_ sender: Any) {
         let selectedMedia = getSelectedMedia()
         guard selectedMedia.count > 0 else { return }
-        self.delegate?.didClickUploadButton(assets: selectedMedia)
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true) {
+            self.delegate?.didClickUploadButton(assets: selectedMedia)
+        }
     }
 }
 
@@ -399,10 +391,6 @@ extension MGLibraryPickerViewController: UICollectionViewDelegate {
         if indexPath.row == 0, self.takePhotoEnable {
             self.didSelectCamera()
             mediaCollectionView.deselectItem(at: indexPath, animated: true)
-        } else {
-//            guard let album = selectedAlbum else { return }
-//            let asset = album.photos[indexPath.row - 1]
-//            let selectedIndexPath = mediaCollectionView.indexPathsForSelectedItems
         }
     }
 }
@@ -431,15 +419,17 @@ extension MGLibraryPickerViewController: UINavigationControllerDelegate, UIImage
             if type.isEqual(kUTTypeImage as String) {
                 if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
                     DispatchQueue.main.async {
-                        self.delegate?.didCameraTakePhoto?(image: image)
-                        self.dismiss(animated: true, completion: nil)
+                        self.dismiss(animated: true) {
+                            self.delegate?.didCameraTakePhoto?(image: image)
+                        }
                     }
                 }
             } else if type.isEqual(kUTTypeVideo as String) || type.isEqual(kUTTypeMovie as NSString as String) {
                 if let videoURL = info[UIImagePickerController.InfoKey.mediaURL] as? URL {
                     DispatchQueue.main.async {
-                        self.delegate?.didCameraTakeVideo?(url: videoURL)
-                        self.dismiss(animated: true, completion: nil)
+                        self.dismiss(animated: true) {
+                            self.delegate?.didCameraTakeVideo?(url: videoURL)
+                        }
                     }
                 }
             }
