@@ -38,7 +38,7 @@ class MLPMediaAlbum: Equatable {
     }
 }
 
-class MGLibraryPickerViewController: UIViewController {
+public class MGLibraryPickerViewController: UIViewController {
 
     @IBOutlet weak var mediaCollectionView: UICollectionView!
     @IBOutlet weak var navigationView: UIView!
@@ -74,7 +74,7 @@ class MGLibraryPickerViewController: UIViewController {
     private var isDown = true
     private weak var albumsPickerViewTopConstraint: NSLayoutConstraint?
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUI()
         self.setupData()
@@ -351,12 +351,12 @@ extension MGLibraryPickerViewController {
 
 // MARK: - UICollectionViewDataSource
 extension MGLibraryPickerViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let photoNumber = selectedAlbum?.photos.count else { return 0 }
         return photoNumber
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.row == 0, self.takePhotoEnable {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CameraCell", for: indexPath) as? MLPCameraCollectionViewCell
                 else {
@@ -377,7 +377,7 @@ extension MGLibraryPickerViewController: UICollectionViewDataSource {
 
 // MARK: - UICollectionViewDelegate
 extension MGLibraryPickerViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+    public func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
         if collectionView.allowsMultipleSelection {
             if indexPath.row == 0, self.takePhotoEnable {
                 return true
@@ -389,7 +389,7 @@ extension MGLibraryPickerViewController: UICollectionViewDelegate {
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.row == 0, self.takePhotoEnable {
             self.didSelectCamera()
             mediaCollectionView.deselectItem(at: indexPath, animated: true)
