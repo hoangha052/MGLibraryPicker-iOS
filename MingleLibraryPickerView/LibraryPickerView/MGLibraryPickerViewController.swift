@@ -114,6 +114,7 @@ public class MGLibraryPickerViewController: UIViewController {
     }
 
     private func setupData() {
+        self.albums = self.fetchAlbums()
         self.fetchAndDisplayPhotos()
         DispatchQueue.global(qos: .default).async {
             self.fetchAlbumsInfo()
