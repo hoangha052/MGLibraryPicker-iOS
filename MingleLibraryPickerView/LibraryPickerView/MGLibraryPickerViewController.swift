@@ -12,7 +12,6 @@ import Photos
 import MobileCoreServices
 
 @objc public protocol MGLibraryPickerViewDelegate: class {
-    var sendPhotoEnabled: Bool { get }
     func didClickUploadButton(assets: [PHAsset])
     @objc optional var sendVideoEnabled: Bool { get }
     @objc optional func didClosePickerView()
@@ -49,6 +48,8 @@ public class MGLibraryPickerViewController: UIViewController {
     @IBOutlet weak var titleImageView: UIImageView!
     
     public weak var delegate: MGLibraryPickerViewDelegate?
+    
+    public var sendPhotoEnabled: Bool = true
     public var maxVideoDuration: Double = 20
     public var maximumSelectionsAllowed = 1
     public var takePhotoEnable: Bool = true
@@ -183,7 +184,7 @@ extension MGLibraryPickerViewController {
 extension MGLibraryPickerViewController {
     private var mediaTypes: [PHAssetMediaType] {
         var medias: [PHAssetMediaType] = []
-        if delegate?.sendPhotoEnabled == true {
+        if sendPhotoEnabled == true {
             medias.append(.image)
         }
         if delegate?.sendVideoEnabled == true {
@@ -339,7 +340,7 @@ extension MGLibraryPickerViewController {
         if delegate?.sendVideoEnabled == true {
             mediaTypes.append(String(kUTTypeMovie))
         }
-        if delegate?.sendPhotoEnabled == true {
+        if sendPhotoEnabled == true {
             mediaTypes.append(String(kUTTypeImage))
         }
         
