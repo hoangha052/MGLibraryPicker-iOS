@@ -73,12 +73,17 @@ public class MGLibraryPickerViewController: UIViewController {
     private weak var albumsPickerView: MGAlbumsPickerView?
     private var isDown = true
     private weak var albumsPickerViewTopConstraint: NSLayoutConstraint?
+
+    public func initViewController() -> MGLibraryPickerViewController {
+        return MGLibraryPickerViewController(nibName: "MGLibraryPickerViewController", bundle: Bundle(for: type(of: self)))
+    }
     
     public override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUI()
         self.setupData()
     }
+    
     
     private func setupUI() {
         setupNavigationView()
